@@ -8,3 +8,4 @@ A set of Handlebars helpers
 * date_time
 * if_has_perm
 * ifeq
+* sprintf
