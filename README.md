@@ -5,7 +5,7 @@ A set of Handlebars helpers
 ## helpers
 
 * coalesce
-* date_time
-* if_has_perm
-* ifeq
+* moment
+* nl2br
 * sprintf
+* truncate
