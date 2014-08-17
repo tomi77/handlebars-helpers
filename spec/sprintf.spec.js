@@ -1,8 +1,11 @@
-var sprintf = require('../src/sprintf');
+var Handlebars = require('handlebars');
+require('../src/sprintf');
 
 describe('A sprintf Handlebars helper', function () {
 	it('should format', function () {
-		expect(sprintf(1, '%.2f')).toBe('1.00');
-		expect(sprintf(2, '%d')).toBe('2');
+		var template = Handlebars.compile('{{sprintf value format}}');
+
+		expect(template({value: 1, format: '%.2f'})).toBe('1.00');
+		expect(template({value: 2, format: '%d'})).toBe('2');
 	});
 });
