@@ -2,10 +2,22 @@
 
 A set of Handlebars helpers
 
-## helpers
+## string helpers
 
-* coalesce
-* moment
-* nl2br
-* sprintf
-* truncate
+* nl2br - replace new line characters with <br/>
+* sprintf - wrapper to underscore.string sprintf function
+* truncate - wrapper to underscore.string truncate function
+
+## date helpers
+
+* moment - wrapper to moment.js
+
+## logical helpers
+
+* coalesce - return first not empty value
+* eq
+* neq
+* lt
+* lte
+* gt
+* gte
