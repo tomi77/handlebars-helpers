@@ -1,4 +1,6 @@
 (function (root, factory) {
+    'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['handlebars'], factory);
@@ -12,11 +14,11 @@
 }(this, function (Handlebars) {
     'use strict';
 
-    function eqHelper(val1, val2) {
+    function eqHelper (val1, val2) {
         return val1 === val2;
     }
 
     Handlebars.registerHelper('eq', eqHelper);
-    
-	return eqHelper;
+
+    return eqHelper;
 }));

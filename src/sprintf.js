@@ -1,4 +1,6 @@
 (function (root, factory) {
+    'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['handlebars', 'underscore.string'], factory);
@@ -12,10 +14,11 @@
 }(this, function (Handlebars, _s) {
     'use strict';
 
-    function sprintf(value, format) {
+    function sprintfHelper (value, format) {
         return _s.sprintf(format, value);
     }
 
-    Handlebars.registerHelper('sprintf', sprintf);
-    return sprintf;
+    Handlebars.registerHelper('sprintf', sprintfHelper);
+
+    return sprintfHelper;
 }));

@@ -1,4 +1,6 @@
 (function (root, factory) {
+    'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['handlebars'], factory);
@@ -12,11 +14,11 @@
 }(this, function (Handlebars) {
     'use strict';
 
-    function gteHelper(val1, val2) {
+    function gteHelper (val1, val2) {
         return val1 >= val2;
     }
 
     Handlebars.registerHelper('gte', gteHelper);
-    
-	return gteHelper;
+
+    return gteHelper;
 }));

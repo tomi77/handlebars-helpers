@@ -1,4 +1,6 @@
 (function (root, factory) {
+    'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['handlebars', 'underscore.string'], factory);
@@ -12,10 +14,11 @@
 }(this, function (Handlebars, _s) {
     'use strict';
 
-    function truncate(str, length, truncateStr) {
+    function truncateHelper(str, length, truncateStr) {
         return _s.truncate(str, length, truncateStr);
     }
 
-    Handlebars.registerHelper('truncate', truncate);
-    return truncate;
+    Handlebars.registerHelper('truncate', truncateHelper);
+
+    return truncateHelper;
 }));

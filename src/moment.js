@@ -1,4 +1,6 @@
 (function (root, factory) {
+    'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['handlebars', 'moment'], factory);
@@ -10,13 +12,13 @@
         root.returnExports = factory(root.Handlebars, root.moment);
     }
 }(this, function (Handlebars, moment) {
-	'use strict';
+    'use strict';
 
-	var momentHelper = function momentHelper (value, format) {
-		return moment(value).format(format);
-	}
-	
-	Handlebars.registerHelper('moment', momentHelper);
-	
-	return momentHelper;
+    function momentHelper (value, format) {
+        return moment(value).format(format);
+    }
+
+    Handlebars.registerHelper('moment', momentHelper);
+
+    return momentHelper;
 }));

@@ -1,4 +1,6 @@
 (function (root, factory) {
+    'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['handlebars'], factory);
@@ -10,17 +12,17 @@
         root.returnExports = factory(root.Handlebars);
     }
 }(this, function (Handlebars) {
-	'use strict';
+    'use strict';
 
-	var nl2brHelper = function (value) {
-		if (value) {
-			return new Handlebars.SafeString(value.replace(/\n/gm, '<br/>'));
-		} else {
-			return '';
-		}
-	}
-	
-	Handlebars.registerHelper('nl2br', nl2brHelper);
-	
-	return nl2brHelper;
+    function nl2brHelper (value) {
+        if (value) {
+            return new Handlebars.SafeString(value.replace(/\n/gm, '<br/>'));
+        } else {
+            return '';
+        }
+    }
+
+    Handlebars.registerHelper('nl2br', nl2brHelper);
+
+    return nl2brHelper;
 }));
