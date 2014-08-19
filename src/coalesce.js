@@ -15,10 +15,8 @@
     'use strict';
 
     function coalesceHelper () {
-        var values = [];
-        for (var i = 0, len = arguments.length - 1; i < len; i++) {
-            values.push(arguments[i]);
-        }
+        var values = Array.prototype.slice.call(arguments);
+        var options = values.pop();
         values = _.compact(values);
         return values.length > 0 ? values[0] : '';
     }
