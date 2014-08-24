@@ -1,4 +1,4 @@
-# handlebars-helpers [![Build Status](https://travis-ci.org/tomi77/handlebars-helpers.png)](https://travis-ci.org/tomi77/handlebars-helpers)
+# handlebars-helpers [![Build Status](https://travis-ci.org/tomi77/handlebars-helpers.png)](https://travis-ci.org/tomi77/handlebars-helpers) [![Coverage Status](https://img.shields.io/coveralls/tomi77/handlebars-helpers.svg)](https://coveralls.io/r/tomi77/handlebars-helpers)
 
 A set of Handlebars helpers
 
