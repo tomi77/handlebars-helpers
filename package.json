@@ -4,7 +4,8 @@
   "description": "A set of Handlebars helpers",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node spec/"
+    "test": "jasmine-node spec/",
+    "coveralls": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
     "moment": "~2.8.1"
   },
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "jasmine-node": "^1.14.5",
+    "istanbul": "^0.3.0",
+    "coveralls": "^2.11.1"
   }
 }
