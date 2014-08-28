@@ -2,6 +2,7 @@ module.exports = (grunt) ->
 
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
+
     concat:
       options:
         banner: """(function (root, factory) {
@@ -20,6 +21,7 @@ module.exports = (grunt) ->
 }(this, function (Handlebars, _, _s, moment) {
     'use strict';
 
+
 """
         footer: """
 
@@ -27,6 +29,7 @@ module.exports = (grunt) ->
       dist:
         src: 'src/*.js',
         dest: 'dist/handlebars-helpers.js'
+
     uglify:
       options:
         compress: true
@@ -34,7 +37,19 @@ module.exports = (grunt) ->
         files:
           'dist/handlebars-helpers.min.js': 'dist/handlebars-helpers.js'
 
+    coffee:
+      options:
+        bare: true
+      dist:
+        expand: true
+        flatten: true
+        cwd: 'src'
+        src: '*.coffee'
+        dest: 'src'
+        ext: '.js'
+
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-coffee'
 
-  grunt.registerTask 'default', ['concat', 'uglify']
+  grunt.registerTask 'default', ['coffee', 'concat', 'uglify']
