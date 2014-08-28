@@ -1,6 +1,4 @@
 Handlebars.registerHelper('neq', function () {
-    'use strict';
-
     var vals = Array.prototype.slice.call(arguments);
     var val1 = vals.shift();
 
