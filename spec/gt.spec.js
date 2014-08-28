@@ -2,9 +2,10 @@ var Handlebars = require('handlebars');
 var fs = require('fs');
 var vm = require('vm');
 var path = require('path');
+var CoffeeScript = require('coffee-script');
 
-var helper = fs.readFileSync(path.join(__dirname, '/../src/gt.js'));
-var script = vm.createScript(helper);
+var helper = fs.readFileSync(path.join(__dirname, '/../src/gt.coffee'));
+var script = vm.createScript(CoffeeScript.compile(helper.toString()));
 var context = {
     Handlebars: Handlebars
 };

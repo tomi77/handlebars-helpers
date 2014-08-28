@@ -4,8 +4,8 @@
   "description": "A set of Handlebars helpers",
   "main": "dist/handlebars-helpers.js",
   "scripts": {
-    "test": "grunt coffee & jasmine-node spec/",
-    "coveralls": "grunt coffee & istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "jasmine-node spec/",
+    "coveralls": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -37,9 +37,11 @@
     "jasmine-node": "^1.14.5",
     "istanbul": "^0.3.0",
     "coveralls": "^2.11.1",
+    "coffee-script": "^1.8.0",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-uglify": "^0.5.1",
-    "grunt-contrib-coffee": "^0.11.1"
+    "grunt-contrib-coffee": "^0.11.1",
+    "grunt-contrib-clean": "^0.6.0"
   }
 }

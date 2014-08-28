@@ -48,8 +48,11 @@ module.exports = (grunt) ->
         dest: 'src'
         ext: '.js'
 
+    clean: ['src/*.js']
+
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
 
-  grunt.registerTask 'default', ['coffee', 'concat', 'uglify']
+  grunt.registerTask 'default', ['coffee', 'concat', 'uglify', 'clean']

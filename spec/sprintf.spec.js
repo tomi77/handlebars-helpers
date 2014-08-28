@@ -3,9 +3,10 @@ var _s = require('underscore.string');
 var fs = require('fs');
 var vm = require('vm');
 var path = require('path');
+var CoffeeScript = require('coffee-script');
 
-var helper = fs.readFileSync(path.join(__dirname, '/../src/sprintf.js'));
-var script = vm.createScript(helper);
+var helper = fs.readFileSync(path.join(__dirname, '/../src/sprintf.coffee'));
+var script = vm.createScript(CoffeeScript.compile(helper.toString()));
 var context = {
     Handlebars: Handlebars,
     _s: _s
