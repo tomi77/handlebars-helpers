@@ -1,5 +1,16 @@
 var Handlebars = require('handlebars');
-require('../src/neq');
+var _ = require('underscore');
+var fs = require('fs');
+var vm = require('vm');
+var path = require('path');
+
+var helper = fs.readFileSync(path.join(__dirname, '/../src/neq.js'));
+var script = vm.createScript(helper);
+var context = {
+    Handlebars: Handlebars,
+    _: _
+};
+script.runInNewContext(context);
 
 describe('A neq Handlebars helper', function () {
     'use strict';

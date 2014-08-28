@@ -1,5 +1,16 @@
 var Handlebars = require('handlebars');
-require('../src/truncate');
+var _s = require('underscore.string');
+var fs = require('fs');
+var vm = require('vm');
+var path = require('path');
+
+var helper = fs.readFileSync(path.join(__dirname, '/../src/truncate.js'));
+var script = vm.createScript(helper);
+var context = {
+    Handlebars: Handlebars,
+    _s: _s
+};
+script.runInNewContext(context);
 
 describe('A truncate Handlebars helper', function () {
     'use strict';

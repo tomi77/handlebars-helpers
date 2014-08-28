@@ -1,5 +1,14 @@
 var Handlebars = require('handlebars');
-require('../src/gt');
+var fs = require('fs');
+var vm = require('vm');
+var path = require('path');
+
+var helper = fs.readFileSync(path.join(__dirname, '/../src/gt.js'));
+var script = vm.createScript(helper);
+var context = {
+    Handlebars: Handlebars
+};
+script.runInNewContext(context);
 
 describe('A gt Handlebars helper', function () {
     'use strict';

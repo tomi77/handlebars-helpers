@@ -1,5 +1,16 @@
 var Handlebars = require('handlebars');
-require('../src/moment');
+var moment = require('moment');
+var fs = require('fs');
+var vm = require('vm');
+var path = require('path');
+
+var helper = fs.readFileSync(path.join(__dirname, '/../src/moment.js'));
+var script = vm.createScript(helper);
+var context = {
+    Handlebars: Handlebars,
+    moment: moment
+};
+script.runInNewContext(context);
 
 describe('A moment Handlebars helper', function () {
     'use strict';
