@@ -3,15 +3,15 @@
 
 if (typeof define === 'function' && define.amd) {
     // AMD
-    define(['handlebars', 'underscore', 'underscore.string', 'moment'], factory);
+    define(['handlebars', 'underscore', 'moment'], factory);
 } else if (typeof exports === 'object') {
     // Node, CommonJS-like
-    module.exports = factory(require('handlebars'), require('underscore'), require('underscore.string'), require('moment'));
+    module.exports = factory(require('handlebars'), require('underscore'), require('moment'));
 } else {
     // Browser globals (root is window)
-    root.returnExports = factory(root.Handlebars, root._, root._s, root.moment);
+    root.returnExports = factory(root.Handlebars, root._, root.moment);
 }
-}(this, function (Handlebars, _, _s, moment) {
+}(this, function (Handlebars, _, moment) {
 'use strict';
 
 Handlebars.registerHelper('coalesce', function() {
@@ -70,14 +70,6 @@ Handlebars.registerHelper('nl2br', function(value) {
   } else {
     return '';
   }
-});
-
-Handlebars.registerHelper('sprintf', function(value, format) {
-  return _s.sprintf(format, value);
-});
-
-Handlebars.registerHelper('truncate', function(str, length, truncateStr) {
-  return _s.truncate(str, length, truncateStr);
 });
 
 }));

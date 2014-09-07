@@ -1,6 +1,6 @@
 {
   "name": "handlebars-helpers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A set of Handlebars helpers",
   "main": "dist/handlebars-helpers.js",
   "scripts": {
@@ -15,11 +15,10 @@
     "handlebars",
     "helpers",
     "templates",
-    "sprintf",
+    "underscore.string",
     "coalesce",
     "moment",
-    "nl2br",
-    "truncate"
+    "nl2br"
   ],
   "author": "Tomasz Rup",
   "license": "ISC",
