@@ -10,8 +10,6 @@ A set of Handlebars helpers
 ## string helpers
 
 * nl2br - replace new line characters with <br/>
-* sprintf - wrapper to underscore.string sprintf function
-* truncate - wrapper to underscore.string truncate function
 
 ## date helpers
 

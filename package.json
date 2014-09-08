@@ -15,7 +15,6 @@
     "handlebars",
     "helpers",
     "templates",
-    "underscore.string",
     "coalesce",
     "moment",
     "nl2br"
