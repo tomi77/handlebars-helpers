@@ -1,18 +1,13 @@
-(function (root, factory) {
-'use strict';
 
-if (typeof define === 'function' && define.amd) {
-    // AMD
-    define(['handlebars', 'underscore', 'moment'], factory);
-} else if (typeof exports === 'object') {
-    // Node, CommonJS-like
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(["handlebars","underscore","moment"], factory);
+  } else if (typeof exports === 'object') {
     module.exports = factory(require('handlebars'), require('underscore'), require('moment'));
-} else {
-    // Browser globals (root is window)
-    root.returnExports = factory(root.Handlebars, root._, root.moment);
-}
-}(this, function (Handlebars, _, moment) {
-'use strict';
+  } else {
+    root.HandlebarsHelpers = factory(root.Handlebars, root._, root.moment);
+  }
+}(this, function(Handlebars, _, moment) {
 
 Handlebars.registerHelper('coalesce', function() {
   var options, values;
@@ -71,5 +66,7 @@ Handlebars.registerHelper('nl2br', function(value) {
     return '';
   }
 });
+
+return Handlebars;
 
 }));
