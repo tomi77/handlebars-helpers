@@ -1,3 +1,1 @@
-Handlebars.registerHelper 'moment', (value, format) ->
-  moment value
-  .format format
+Handlebars.registerHelper 'moment', (value, format) -> moment(value).format format
